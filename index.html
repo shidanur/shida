@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shida</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* JS çalışmazsa içerikler gizli kalmasın diye fallback */
+        .reveal {
+            visibility: hidden;
+        }
+        .reveal.active {
+            visibility: visible;
+        }
+    </style>
+</head>
+<body class="bg-blue-50/50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 antialiased selection:bg-blue-500 selection:text-white transition-colors duration-300">
+
+    <!-- Navbar / Header (iOS Dynamic Island Style) -->
+    <header id="navbar" class="fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-4xl z-50 rounded-full backdrop-blur-xl bg-white/40 dark:bg-slate-900/60 border border-white/60 dark:border-slate-700/50 shadow-lg shadow-blue-900/5 dark:shadow-none transition-all duration-500">
+        <div id="navbar-inner" class="px-6 h-16 flex items-center justify-between transition-all duration-500">
+            <a href="#" class="text-lg font-semibold tracking-tight text-blue-600 dark:text-blue-400 hover:text-blue-500 dark:hover:text-blue-300 transition-colors">
+                shida.dev
+            </a>
+            <div class="flex items-center gap-6">
+                <nav class="hidden md:flex space-x-6 lg:space-x-8 text-sm font-medium text-slate-600 dark:text-slate-400">
+                    <a href="#hakkimda" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Hakkımda</a>
+                    <a href="#yetenekler" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Yetenekler</a>
+                    <a href="#projeler" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Projeler</a>
+                    <a href="#iletisim" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">İletişim</a>
+                </nav>
+                <!-- Tema Değiştirme Butonu -->
+                <button id="theme-toggle" type="button" class="p-2 rounded-full bg-white/50 dark:bg-slate-800/80 border border-white/80 dark:border-slate-700/80 text-blue-600 dark:text-slate-300 hover:scale-110 transition-transform duration-300 shadow-sm" aria-label="Tema Değiştir">
+                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 pt-40 pb-24 space-y-32">
+
+        <!-- Hero Section -->
+        <section class="min-h-[60vh] flex flex-col justify-center items-start space-y-6">
+            <div class="reveal opacity-0 translate-y-6 transition-all duration-700 ease-out inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-600 dark:text-blue-400 text-xs font-medium tracking-wide">
+                <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+                Gelişime Açık & Meraklı
+            </div>
+            <h1 class="reveal delay-100 opacity-0 translate-y-6 transition-all duration-700 ease-out text-4xl md:text-6xl font-bold tracking-tight text-slate-900 dark:text-white">
+                Merhaba, ben <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-600 dark:from-blue-400 dark:to-indigo-500">Şeyda Nur</span>.
+            </h1>
+            <p class="reveal delay-200 opacity-0 translate-y-6 transition-all duration-700 ease-out text-lg md:text-xl text-slate-700 dark:text-slate-400 max-w-xl leading-relaxed">
+                Yazılım dünyasına yeni adım atan, öğrenmeyi ve kendimi geliştirmeyi seven bir geliştirici adaylıyım. Modern ve minimalist web teknolojileri üzerine odaklanıyorum.
+            </p>
+            <div class="reveal delay-300 opacity-0 translate-y-6 transition-all duration-700 ease-out flex items-center gap-4 pt-2">
+                <a href="#iletisim" class="px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-medium text-sm transition-all shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 hover:-translate-y-0.5">
+                    İletişime Geç
+                </a>
+                <a href="#projeler" class="px-6 py-3 rounded-full bg-white/60 dark:bg-slate-900/60 backdrop-blur-md hover:bg-white dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 border border-white/80 dark:border-slate-700/80 font-medium text-sm transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5">
+                    Projelerimi Gör
+                </a>
+            </div>
+        </section>
+
+        <!-- Hakkımda Section -->
+        <section id="hakkimda" class="space-y-6">
+            <h2 class="reveal opacity-0 translate-y-6 transition-all duration-700 ease-out text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">
+                Hakkımda
+            </h2>
+            <div class="reveal delay-100 opacity-0 translate-y-6 transition-all duration-700 ease-out p-8 rounded-3xl bg-white/40 dark:bg-slate-900/40 border border-white/60 dark:border-white/5 backdrop-blur-xl space-y-4 text-slate-700 dark:text-slate-300 leading-relaxed shadow-xl shadow-blue-900/5 dark:shadow-none hover:bg-white/60 dark:hover:bg-slate-900/60 transition-colors duration-500">
+                <p>
+                    Yazılım ve teknoloji alanındaki merakımı akademik eğitimimle harmanlayarak sürekli yeni şeyler öğrenmeye gayret ediyorum. Temel programlama mantığını kavradıktan sonra bunu web ve yazılım geliştirme alanında ileriye taşımayı hedefliyorum.
+                </p>
+                <p>
+                    Detaylara önem veren, sade tasarımları seven ve sürekli araştıran bir yapıya sahibim.
+                </p>
+            </div>
+        </section>
+
+        <!-- Yetenekler Section -->
+        <section id="yetenekler" class="space-y-6">
+            <h2 class="reveal opacity-0 translate-y-6 transition-all duration-700 ease-out text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">
+                Yetenekler & Teknolojiler
+            </h2>
+            <p class="reveal delay-100 opacity-0 translate-y-6 transition-all duration-700 ease-out text-slate-600 dark:text-slate-400 text-sm">Okul sürecimde ve bireysel olarak öğrendiğim, temel düzeyde bilgi sahibi olduğum teknolojiler:</p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <!-- HTML -->
+                <div class="reveal delay-[150ms] opacity-0 translate-y-6 transition-all duration-700 ease-out p-5 rounded-3xl bg-white/40 dark:bg-slate-900/40 border border-white/60 dark:border-white/5 backdrop-blur-xl hover:scale-[1.03] transition-transform duration-300 flex items-center gap-4 shadow-xl shadow-blue-900/5 dark:shadow-none cursor-default group">
+                    <div class="w-10 h-10 rounded-2xl bg-orange-500/10 flex items-center justify-center text-orange-500 dark:text-orange-400 font-bold group-hover:bg-orange-500/20 transition-colors duration-300">H</div>
+                    <div>
+                        <h3 class="font-medium text-slate-900 dark:text-white">HTML5</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-400">Yapı ve İşaretleme</p>
+                    </div>
+                </div>
+                <!-- CSS -->
+                <div class="reveal delay-[200ms] opacity-0 translate-y-6 transition-all duration-700 ease-out p-5 rounded-3xl bg-white/40 dark:bg-slate-900/40 border border-white/60 dark:border-white/5 backdrop-blur-xl hover:scale-[1.03] transition-transform duration-300 flex items-center gap-4 shadow-xl shadow-blue-900/5 dark:shadow-none cursor-default group">
+                    <div class="w-10 h-10 rounded-2xl bg-blue-500/10 flex items-center justify-center text-blue-600 dark:text-blue-400 font-bold group-hover:bg-blue-500/20 transition-colors duration-300">C</div>
+                    <div>
+                        <h3 class="font-medium text-slate-900 dark:text-white">CSS3</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-400">Stillendirme</p>
+                    </div>
+                </div>
+                <!-- JavaScript -->
+                <div class="reveal delay-[250ms] opacity-0 translate-y-6 transition-all duration-700 ease-out p-5 rounded-3xl bg-white/40 dark:bg-slate-900/40 border border-white/60 dark:border-white/5 backdrop-blur-xl hover:scale-[1.03] transition-transform duration-300 flex items-center gap-4 shadow-xl shadow-blue-900/5 dark:shadow-none cursor-default group">
+                    <div class="w-10 h-10 rounded-2xl bg-yellow-500/10 flex items-center justify-center text-yellow-600 dark:text-yellow-400 font-bold group-hover:bg-yellow-500/20 transition-colors duration-300">JS</div>
+                    <div>
+                        <h3 class="font-medium text-slate-900 dark:text-white">JavaScript</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-400">İnteraktif Mantık</p>
+                    </div>
+                </div>
+                <!-- C -->
+                <div class="reveal delay-[300ms] opacity-0 translate-y-6 transition-all duration-700 ease-out p-5 rounded-3xl bg-white/40 dark:bg-slate-900/40 border border-white/60 dark:border-white/5 backdrop-blur-xl hover:scale-[1.03] transition-transform duration-300 flex items-center gap-4 shadow-xl shadow-blue-900/5 dark:shadow-none cursor-default group">
+                    <div class="w-10 h-10 rounded-2xl bg-purple-500/10 flex items-center justify-center text-purple-600 dark:text-purple-400 font-bold group-hover:bg-purple-500/20 transition-colors duration-300">C</div>
+                    <div>
+                        <h3 class="font-medium text-slate-900 dark:text-white">C Programlama</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-400">Temel Algoritma</p>
+                    </div>
+                </div>
+                <!-- C# -->
+                <div class="reveal delay-[350ms] opacity-0 translate-y-6 transition-all duration-700 ease-out p-5 rounded-3xl bg-white/40 dark:bg-slate-900/40 border border-white/60 dark:border-white/5 backdrop-blur-xl hover:scale-[1.03] transition-transform duration-300 flex items-center gap-4 shadow-xl shadow-blue-900/5 dark:shadow-none cursor-default group">
+                    <div class="w-10 h-10 rounded-2xl bg-indigo-500/10 flex items-center justify-center text-indigo-600 dark:text-indigo-400 font-bold group-hover:bg-indigo-500/20 transition-colors duration-300">C#</div>
+                    <div>
+                        <h3 class="font-medium text-slate-900 dark:text-white">C#</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-400">Nesne Yönelimli</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projeler Section -->
+        <section id="projeler" class="space-y-6">
+            <h2 class="reveal opacity-0 translate-y-6 transition-all duration-700 ease-out text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">
+                Projeler
+            </h2>
+            <div class="reveal delay-100 opacity-0 translate-y-6 transition-all duration-700 ease-out p-8 rounded-3xl bg-white/20 dark:bg-slate-900/20 border border-dashed border-blue-300/50 dark:border-slate-700/50 backdrop-blur-sm text-center space-y-3">
+                <p class="text-slate-600 dark:text-slate-400 text-sm">Şu an üzerinde aktif bir projem bulunmuyor.</p>
+                <p class="text-xs text-slate-500">İlerleyen süreçte geliştirdiğim projeleri burada sergiliyor olacağım.</p>
+            </div>
+        </section>
+
+        <!-- İletişime Geçin Section -->
+        <section id="iletisim" class="space-y-6">
+            <h2 class="reveal opacity-0 translate-y-6 transition-all duration-700 ease-out text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">
+                İletişim
+            </h2>
+            <div class="reveal delay-100 opacity-0 translate-y-6 transition-all duration-700 ease-out p-8 rounded-3xl bg-gradient-to-br from-white/60 to-white/20 dark:from-slate-800/40 dark:to-slate-900/40 border border-white/60 dark:border-white/5 backdrop-blur-xl flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl shadow-blue-900/5 dark:shadow-none">
+                <div class="space-y-2 text-center md:text-left">
+                    <h3 class="text-xl font-medium text-slate-900 dark:text-white">Benimle iletişime geçin</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 max-w-md">
+                        Soru sormak, tanışmak veya fikir alışverişinde bulunmak isterseniz her zaman mesaj atabilirsiniz.
+                    </p>
+                </div>
+                <a href="mailto:ornek@email.com" class="px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-medium text-sm transition-all shadow-lg shadow-blue-600/30 hover:shadow-blue-600/50 hover:-translate-y-0.5 flex items-center gap-2 shrink-0">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    E-posta Gönder
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="max-w-4xl mx-auto px-6 py-8 border-t border-blue-200/50 dark:border-slate-800/50 text-center text-xs text-slate-500 dark:text-slate-600">
+        <p>© 2026 Şeyda Nur Çelik. Minimalist tasarım.</p>
+    </footer>
+
+    <!-- JS Kodları -->
+    <script>
+        // --- 0. iOS TARZI YÜZEN MENÜ ANİMASYONU ---
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            const navbarInner = document.getElementById('navbar-inner');
+            
+            if (window.scrollY > 20) {
+                navbar.classList.add('bg-white/70', 'dark:bg-slate-900/80', 'shadow-xl');
+                navbar.classList.remove('bg-white/40', 'dark:bg-slate-900/60', 'shadow-lg');
+                navbarInner.classList.replace('h-16', 'h-14');
+            } else {
+                navbar.classList.add('bg-white/40', 'dark:bg-slate-900/60', 'shadow-lg');
+                navbar.classList.remove('bg-white/70', 'dark:bg-slate-900/80', 'shadow-xl');
+                navbarInner.classList.replace('h-14', 'h-16');
+            }
+        });
+
+        // --- 1. TEMA DEĞİŞTİRME MANTIĞI ---
+        var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+        var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+        if (localStorage.getItem('color-theme') === 'light' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+            document.documentElement.classList.remove('dark');
+            themeToggleDarkIcon.classList.remove('hidden');
+        } else {
+            document.documentElement.classList.add('dark');
+            themeToggleLightIcon.classList.remove('hidden');
+        }
+
+        var themeToggleBtn = document.getElementById('theme-toggle');
+
+        themeToggleBtn.addEventListener('click', function() {
+            themeToggleDarkIcon.classList.toggle('hidden');
+            themeToggleLightIcon.classList.toggle('hidden');
+
+            if (localStorage.getItem('color-theme')) {
+                if (localStorage.getItem('color-theme') === 'light') {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                }
+            } else {
+                if (document.documentElement.classList.contains('dark')) {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                } else {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                }
+            }
+        });
+
+        // --- 2. KAYDIRMA VE SIRALI BELİRME (STAGGERED REVEAL) MANTIĞI ---
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active', 'opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-6');
+                    observer.unobserve(entry.target); 
+                }
+            });
+        }, observerOptions);
+
+        // İçerideki parçaları (başlıklar, paragraflar, kartlar) tek tek izliyoruz
+        document.querySelectorAll('.reveal').forEach((element) => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>
